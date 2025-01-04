@@ -79,14 +79,14 @@ if __name__ == "__main__":
         # predictions = lr.predict(train_x)
         # signature = infer_signature(train_x, predictions)
         
-        # For remote server only (Dagshub)
-        remote_server_uri = "https://dagshub.com/raunakkumar2110/ML-Flow-Basic-Operation.mlflow"
-        mlflow.set_tracking_uri(remote_server_uri)
-
-
-        # # For remote server only (AWS)
-        # remote_server_uri = "http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/"
+        # # For remote server only (Dagshub)
+        # remote_server_uri = "https://dagshub.com/raunakkumar2110/ML-Flow-Basic-Operation.mlflow"
         # mlflow.set_tracking_uri(remote_server_uri)
+
+
+        # For remote server only (AWS)
+        remote_server_uri = "http://ec2-52-23-185-41.compute-1.amazonaws.com:5000/"
+        mlflow.set_tracking_uri(remote_server_uri)
 
 
 
@@ -102,3 +102,4 @@ if __name__ == "__main__":
                 lr, "model", registered_model_name="ElasticnetWineModel")
         else:
             mlflow.sklearn.log_model(lr, "model")
+
